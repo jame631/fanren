@@ -1,0 +1,893 @@
+/* 全局变量定义 - 统一管理配色、间距等基础样式 */
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #5c8cbe;
+    --text-color: #333333;
+    --light-text: #666666;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --accent-color: #d9a566;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 图片容器 */
+.image-container {
+    max-width: 1160px;
+	max-height: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* 大图展示区域 */
+.large-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+/* 悬停效果 */
+.large-image:hover .main-image {
+    transform: scale(1.02);
+}
+
+/* 图片信息区域 */
+.image-info {
+    padding: 20px;
+}
+
+.image-info h3 {
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.image-info p {
+    color: #666;
+}
+
+
+/* 基础样式重置 - 统一浏览器默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding-bottom: var(--spacing-xl);
+}
+
+/* 通用容器样式 - 统一页面布局宽度 */
+.footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+.footercontainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #3d3d3d;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span {
+    color: #bbdefb;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #bbdefb;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #bbdefb;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* 英雄区域样式 */
+.hero {
+    background-color: #a9c4f5;
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(156, 39, 176, 0.1), rgba(33, 150, 243, 0.1));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #e3f2fd;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #42a5f5;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1e88e5;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 特色板块样式 */
+.features {
+    padding: 3rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: #1a237e;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #42a5f5;
+    border-radius: 2px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #e3f2fd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: #1a237e;
+    font-size: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1a237e;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* 最新讨论区样式 */
+.discussions {
+    background-color: #f5f7fa;
+    padding: 3rem 0;
+}
+
+.discussion-list {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.discussion-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.discussion-item:last-child {
+    border-bottom: none;
+}
+
+.discussion-item:hover {
+    background-color: #f9f9f9;
+}
+
+.discussion-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.discussion-info h3 a {
+    color: #1a237e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.discussion-info h3 a:hover {
+    color: #42a5f5;
+}
+
+.discussion-meta {
+    color: #888;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.discussion-stats {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+/* 文章头部样式 */
+.article-header {
+    background-color: var(--card-background);
+    padding: var(--spacing-xl) 0;
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.article-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+.article-subtitle {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+}
+
+.article-meta {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.article-meta span {
+    margin: 0 var(--spacing-sm);
+}
+
+.article-meta i {
+    margin-right: 5px;
+}
+
+/* 文章内容样式 */
+.article-content {
+    background-color: var(--card-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: var(--spacing-xl);
+}
+
+.opening-paragraph {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--light-text);
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-md);
+    border-left: 3px solid var(--accent-color);
+}
+
+.article-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.article-content .section-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--border-color);
+    text-align: left;
+    font-size: 1.8rem;
+    padding-bottom: 0.5rem;
+}
+
+.article-content .section-title::after {
+    display: none; /* 覆盖全局section-title的下划线样式 */
+}
+
+.subsection-title {
+    color: var(--secondary-color);
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+    font-size: 1.4rem;
+}
+
+.article-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.article-list {
+    margin: var(--spacing-md) 0 var(--spacing-md) var(--spacing-xl);
+}
+
+.article-list li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.article-quote {
+    border-left: 3px solid var(--primary-color);
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    background-color: rgba(74, 111, 165, 0.05);
+    font-style: italic;
+    color: var(--light-text);
+}
+
+/* 关键因素样式 */
+.key-factors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.factor-item {
+    background-color: rgba(217, 165, 102, 0.1);
+    border: 1px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: #8b6e3c;
+    font-size: 0.95rem;
+}
+
+/* 评论区样式 */
+.comment-section {
+    background-color: var(--card-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.comment-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.comment-form {
+    margin-bottom: var(--spacing-xl);
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    min-height: 120px;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+    resize: vertical;
+}
+
+.comment-form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.comment-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+.comment-item {
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+.comment-author {
+    font-weight: bold;
+    margin-bottom: var(--spacing-sm);
+}
+
+.comment-text {
+    margin-bottom: var(--spacing-sm);
+}
+
+.comment-time {
+    font-size: 0.8rem;
+    color: var(--light-text);
+}
+
+.no-comments {
+    color: var(--light-text);
+    text-align: center;
+	}	
+/* 人物介绍模块样式 */
+
+.person-profile {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.profile-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    height: auto;
+    position: relative;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-content {
+    flex: 1.2;
+    min-width: 300px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.profile-name {
+    margin: 0 0 10px 0;
+    color: #2d3748;
+    font-size: 1.8rem;
+}
+
+.profile-title {
+    margin: 0 0 20px 0;
+    color: #718096;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.profile-bio {
+    color: #4a5568;
+    line-height: 1.8;
+}
+
+.profile-bio p {
+    margin-bottom: 16px;
+}
+
+.profile-bio h3 {
+    margin: 24px 0 12px 0;
+    color: #2d3748;
+    font-size: 1.3rem;
+}
+
+.profile-details {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-details li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.profile-details li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4a5568;
+}
+/* 阅读全文按钮样式 */
+.read-more-btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    position: static;
+    bottom: 40px;
+    right: 40px;
+}
+
+.read-more-btn:hover {
+    background-color: #2980b9;
+}
+
+/* 底部查看其它人物按钮 */
+.other-people-btn-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.other-people-btn {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.other-people-btn:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .profile-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-image {
+        max-height: 400px;
+    }
+    
+    .profile-content {
+        padding: 30px 25px;
+    }
+    
+    .read-more-btn {
+        position: static;
+        margin-top: 20px;
+        display: inline-block;
+    }
+}
+
+/* 人物志文章列表样式 */
+
+.articles-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 2.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #4a5568;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+}
+
+.article-item {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.article-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f7fafc;
+}
+
+.article-title {
+    color: #2d3748;
+    font-size: 1.3rem;
+    margin: 0 0 1rem 0;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.article-title:hover {
+    color: #2b6cb0;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background-color: #4a5568;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #2b6cb0;
+    transform: translateX(3px);
+}
+
+/* 人物志标题栏 */
+.hero2 {
+    background-color: #ffffff;
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 导航栏样式 */
+.site-nav {
+    background-color: #2d3748;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.site-nav .logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #4299e1;
+}
+
+/* 关于页面容器 */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    display: grid;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* 内容区块样式 */
+.about-section, .disclaimer-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.about-content p, .disclaimer-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #4a5568;
+}
+
+.about-content h2 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem;
+    color: #2d3748;
+}
+
+.disclaimer-content ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #4a5568;
+}
+
+.disclaimer-content li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.disclaimer-content a {
+    color: #2b6cb0;
+    text-decoration: none;
+}
+
+.disclaimer-content a:hover {
+    text-decoration: underline;
+}
+
+/* 页脚样式 */
+.site-footer {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.site-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.site-footer p {
+    margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+    color: #4299e1;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
