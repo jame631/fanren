@@ -173,6 +173,8 @@ body {
     overflow: clip;
 }
 
+
+
 .hero::before {
     content: '';
     position: absolute;
@@ -710,7 +712,7 @@ body {
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.8rem;
+    gap: 1rem;
 }
 
 .article-item {
@@ -729,7 +731,7 @@ body {
 
 .article-title {
     color: #2d3748;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0 0 1rem 0;
     text-decoration: none;
     display: block;
